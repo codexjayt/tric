@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Message</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .message-container {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      text-align: center;
+      max-width: 90%;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px white;
+      z-index: 100;
+    }
+    #loveButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #proposal {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #fff0f5;
+      color: #d63384;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+    #proposal h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+    }
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-container" id="messageContainer">
+    <p>
+      Happy Girlfriends Day, My Love. 💗💗 <br><br>
+I’m honestly happy nga nag estorya na ta balik, in a way nga dli na heavy or puno sa kasakit. I never thought we’d reach this point again nga maka share tag words nga d na puno ug away or luha, and it means a lot to me.<br><br>
+After everything that happened between us all the pain, all the distance yet here we are, still finding our way back to each other. That alone is something I’m deeply thankful for.<br><br>
+I know I’ve made mistakes, and I’m sorry for all of it. But this time, I promise you… I’m different. I’m learning to be better not just for you, but for myself too.<br><br>
+You don’t have to trust me right away. I get it nasakitan ka, and maybe naapektuhan pa imong pagsalig. But I want you to know nga I’m here, no pressure, no forcing anything… Just someone willing to stay, to grow, and to love you better than before.<br><br>
+If all you need right now is peace, space, or even just light conversations. I’ll give that. I just want to be someone who brings you calm, not chaos.<br><br>
+Take your time, love. I’m not in a rush. Basta kabalo lang ka, you still matter so much to me. And you always will.
+    </p>
+    <button id="loveButton">I love you so much</button>
+  </div>
+
+  <div id="proposal">
+    <h1>Will you be my girlfriend? 💖</h1>
+    <button id="yesBtn" class="btn">Yes</button>
+    <button id="noBtn" class="btn">No</button>
+  </div>
+
+  <script>
+    const loveButton = document.getElementById('loveButton');
+    const messageContainer = document.getElementById('messageContainer');
+    const proposal = document.getElementById('proposal');
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+
+    loveButton.addEventListener('click', () => {
+      messageContainer.style.transition = 'opacity 2s';
+      messageContainer.style.opacity = '0';
+      setTimeout(() => {
+        messageContainer.style.display = 'none';
+        proposal.style.display = 'flex';
+      }, 2000);
+    });
+
+    noBtn.addEventListener('mouseenter', () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      document.body.innerHTML = "<h1 style='color:#d63384; font-family:Arial;'>Yaaay! 💞 I love you too!</h1>";
+    });
+  </script>
+</body>
+</html>
